@@ -265,8 +265,17 @@ var Relatorios = function() {
     button.textContent = "Atividades eliminadas";
     button.style.marginLeft = "10px";
     button.style.width = "calc(100% - 20px)";
+    button.style.marginBottom = "10px";
     button.addEventListener("click", function() {
         window.location = "#AtividadesEliminadas";
+    });
+    this.elemento.appendChild(button);
+    var button = document.createElement("button");
+    button.textContent = "Atividades concluídas";
+    button.style.marginLeft = "10px";
+    button.style.width = "calc(100% - 20px)";
+    button.addEventListener("click", function() {
+        window.location = "#AtividadesConcluidas";
     });
     this.elemento.appendChild(button);
 };
@@ -356,6 +365,32 @@ var AtividadesEliminadas = function() {
 };
 AtividadesEliminadas.prototype = new Pagina();
 AtividadesEliminadas.prototype.constructor = AtividadesEliminadas;
+
+var AtividadesConcluidas = function() {
+    Pagina.call(this);
+    var fieldset = document.createElement("fieldset");
+    var legend = document.createElement("legend");
+    legend.textContent = "Atividades concluídas";
+    fieldset.appendChild(legend);
+    for (var i = 0; i < atividades.length; i++) {
+        var atividade = atividades[i];
+        if (atividade.situacao == "concluída"){
+            var div = document.createElement("div");
+            div.style.borderStyle = "solid";
+            div.style.borderWidth = "1px";
+            div.style.borderColor = "#8A0707";
+            div.style.borderRadius = "5px";
+            div.style.marginBottom = "10px";
+            var p = document.createElement("p");
+            p.textContent = atividade.descricao;
+            div.appendChild(p);
+            fieldset.appendChild(div);
+        };
+    };
+    this.elemento.appendChild(fieldset);
+};
+AtividadesConcluidas.prototype = new Pagina();
+AtividadesConcluidas.prototype.constructor = AtividadesConcluidas;
 
 var NovaAtividade = function() {
     Pagina.call(this);
