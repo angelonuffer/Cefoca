@@ -1,0 +1,29 @@
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <rect x="10" y="10" width="280" height="280" rx="40" ry="40" style="fill: #FFFFFF;" />
+    <circle cx="100" cy="60" r="30" style="fill: #8A0707; stroke: #000000; stroke-width: 1px;" />
+    <path style="fill: #8A0707; stroke: #000000; stroke-width: 1px;" d="
+        M 103 93
+        c 3 5, 5 7, 10 7
+        c 20 0, 30 10, 20 30
+        c -15 30, 15 80, 60 80
+        c 0 -20, 30 -20, 30 -20
+        c 0 5, -10 25, -10 25
+        c 0 0, 10 20, 10 25
+        c 0 0, -30 0, -30 -20
+        c 0 0, -40 20, -60 20
+        c -60 20, -60 -50, -50 -80
+        c 5 -15, 14 -25, 14 -40
+        C 87 98, 97 93, 97 93
+    "/>
+    <circle cx="100" cy="93" r="3" style="fill: #E02080; stroke: #000000; stroke-width: 1px;" />
+    <path style="fill: #8A0707; stroke: #000000; stroke-width: 1px;" d="
+        M 118 210
+        c 0 0, 0 20, -5 25
+        c 0 0, 30 5, 30 10
+        c 0 5, -45 10, -45 -10
+        c 0 -10, 0 -20, 5 -25
+    "/>
+    <circle cx="120" cy="110" r="5" style="fill: #FFFFFF; stroke: #000000; stroke-width: 1px;" />
+    <circle cx="119" cy="108.5" r="3" style="fill: #0000FF;" />
+    <circle cx="118.2" cy="108" r="1.5" style="fill: #000000;" />
+</svg>

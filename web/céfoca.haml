@@ -1,0 +1,18 @@
+%html
+    %head
+        %title Céfoca
+        %meta(charset="UTF-8")
+        %meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no")
+        %script= `cat jsrsasign.min.js`
+        %script= `cat atividades.js`
+        %script= `cat céfoca.js`
+        %script= `cat página.js`
+        %style= `cat céfoca.css`
+    %body
+        #barra-usuario
+            %button#acoes Ações
+            %p#nome
+            %button#relatorios Relatórios
+        #acoes.nao-mostra
+        #atividades
+        #relatorios.nao-mostra
