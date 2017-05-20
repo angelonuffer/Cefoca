@@ -4,7 +4,7 @@ Céfoca é um app de organização de atividades diárias.
 
 ## Construindo o HTML
 
-O jogo utiliza HTML e roda a partir de um único arquivo. Este arquivo é
+O app utiliza HTML e roda a partir de um único arquivo. Este arquivo é
 gerado a partir do código fonte presente no diretório "web". Antes de gerar
 o .html, verifique se você possui as dependências a seguir:
 
