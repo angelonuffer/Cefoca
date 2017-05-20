@@ -86,13 +86,7 @@ var Atividades = function() {
     fieldset_mais_seis.style.paddingBottom = "0px";
     fieldset_mais_seis.style.display = "none";
     this.elemento.appendChild(fieldset_mais_seis);
-    var fieldset_depois = document.createElement("fieldset");
-    var legend = document.createElement("legend");
-    legend.textContent = "Depois";
-    fieldset_depois.appendChild(legend);
-    fieldset_depois.style.paddingBottom = "0px";
-    fieldset_depois.style.display = "none";
-    this.elemento.appendChild(fieldset_depois);
+    var fieldsets_depois = new Array();
     for (var i = 0; i < atividades.length; i++) {
         var atividade = atividades[i];
         var data_prevista = Math.floor(atividade.data_prevista / 24 / 60 / 60);
@@ -198,16 +192,47 @@ var Atividades = function() {
                 };
             };
         } else if (data_prevista > hoje + 6) {
-            if (atividade.situacao == "criada") {
-                fieldset_depois.appendChild(atividade.elemento);
-                fieldset_depois.style.display = "block";
+            var data = new Date(data_prevista * 24 * 60 * 60 * 1000);
+            var dia = data.getUTCDate();
+            if (dia < 10) {
+                dia = "0" + dia;
             };
-            if (atividade.situacao == "concluída") {
-                if (data_conclusao == hoje) {
-                    fieldset_depois.appendChild(atividade.elemento);
-                    fieldset_depois.style.display = "block";
+            var mes = data.getUTCMonth() + 1;
+            if (mes < 10) {
+                mes = "0" + mes;
+            };
+            var ano = data.getUTCFullYear();
+            var data = dia + "/" + mes + "/" + ano;
+            var fieldset = null;
+            for (var j = 0; j < fieldsets_depois.length; j++) {
+                var fieldset_depois = fieldsets_depois[j];
+                if (data_prevista < fieldset_depois.data) {
+                    fieldset = document.createElement("fieldset");
+                    var legend = document.createElement("legend");
+                    legend.textContent = data;
+                    fieldset.appendChild(legend);
+                    fieldset.style.paddingBottom = "0px";
+                    this.elemento.insertBefore(fieldset, fieldset_depois);
+                    fieldset.data = data_prevista;
+                    fieldsets_depois.push(fieldset);
+                    break;
+                };
+                if (data_prevista == fieldset_depois.data) {
+                    fieldset = fieldset_depois;
+                    break;
                 };
             };
+            if (fieldset == null) {
+                fieldset = document.createElement("fieldset");
+                var legend = document.createElement("legend");
+                legend.textContent = data;
+                fieldset.appendChild(legend);
+                fieldset.style.paddingBottom = "0px";
+                this.elemento.appendChild(fieldset);
+                fieldset.data = data_prevista;
+                fieldsets_depois.push(fieldset);
+            };
+            fieldset.appendChild(atividade.elemento);
         } else {
             if (atividade.situacao == "criada") {
                 fieldset_sem_data.appendChild(atividade.elemento);
