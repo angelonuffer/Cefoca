@@ -8,8 +8,8 @@ O jogo utiliza HTML e roda a partir de um único arquivo. Este arquivo é
 gerado a partir do código fonte presente no diretório "web". Antes de gerar
 o .html, verifique se você possui as dependências a seguir:
 
-    - [HAML](http://haml.info/)
-    - [jsrsasign](https://kjur.github.io/jsrsasign/)
+- [HAML](http://haml.info/)
+- [jsrsasign](https://kjur.github.io/jsrsasign/)
 
 O arquivo jsrsasign.min.js deve ser colocado no diretório "web". Ele pode ser
 instalado a partir do comando:
