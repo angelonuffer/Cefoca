@@ -271,6 +271,15 @@ var Relatorios = function() {
     });
     this.elemento.appendChild(button);
     var button = document.createElement("button");
+    button.textContent = "Atividades pendentes";
+    button.style.marginLeft = "10px";
+    button.style.width = "calc(100% - 20px)";
+    button.style.marginBottom = "10px";
+    button.addEventListener("click", function() {
+        window.location = "#Atividades";
+    });
+    this.elemento.appendChild(button);
+    var button = document.createElement("button");
     button.textContent = "Atividades concluídas";
     button.style.marginLeft = "10px";
     button.style.width = "calc(100% - 20px)";
